@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Products;
 use App\Models\Order;
 use App\Models\User;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 
 
 /*
@@ -37,3 +39,8 @@ Route::post('/login', 'UserController@login');
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+
+//oauth2
+Route::post("register",[AuthController::class,'register']);
+Route::post("login",[AuthController::class,'login']);
